@@ -2,7 +2,7 @@ import java.util.Scanner;
 import Book.*;
 import User.*;
 
-public class main {
+public class Start {
     private static Scanner sc = new Scanner(System.in);
     private static UserManager userManager = new UserManager(); // UserManager 인스턴스 생성
     private static BookManager manager = new BookManager();
