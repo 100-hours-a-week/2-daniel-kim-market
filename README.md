@@ -21,6 +21,7 @@
 <img width="358" alt="Image" src="https://github.com/user-attachments/assets/4c2961e5-4cce-4c73-bf57-578565d1a03a" />
 
 <img width="549" alt="Image" src="https://github.com/user-attachments/assets/952abf26-34c6-4b2f-80de-a8c23bfaebb7" />
+
 텍스트 파일 목록에 있지 않은 아이디와 비밀번호는 접근이 되지 않으며,
 회원가입을 통해 아이디를 생성하고 접속할 수 있다.
 
@@ -31,6 +32,7 @@
 책을 판매할 수도 있다.
 
 책 등록 후 추가된 것을 확인할 수 있다.
+
 <img width="362" alt="Image" src="https://github.com/user-attachments/assets/d9395c95-05c1-48f0-b9b0-50026be8d5dd" />
 
 # 책 구매
