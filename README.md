@@ -5,13 +5,17 @@
 <img width="358" alt="Image" src="https://github.com/user-attachments/assets/51e719d5-f765-4bfe-9408-51bf93e99574" />
 
 # 과제 설명
+
 사용자는 로그인을 해야 중고책 마켓에 들어갈 수 있다. 아이디가 없다면 회원가입을 한 뒤 로그인을 한다.
 중고책 마켓에서는 물건을 구매하거나 판매할 수 있다.
 
+
 # 초기화면
 <img width="357" alt="Image" src="https://github.com/user-attachments/assets/32246f3e-5054-4977-b05f-42169bceffbc" />
+
 로그인 화면이 뜨고 [1] 로그인, [2] 회원가입, [3] 종료
 를 선택할 수 있다.
+
 
 # 회원가입
 <img width="358" alt="Image" src="https://github.com/user-attachments/assets/4c2961e5-4cce-4c73-bf57-578565d1a03a" />
@@ -22,6 +26,7 @@
 
 # 책 판매
 <img width="348" alt="Image" src="https://github.com/user-attachments/assets/a012025b-4da3-4685-ae89-93b007a0fea2" />
+
 다른 사람이 판매중인 책 목록을 확인할 수 있고,
 책을 판매할 수도 있다.
 
@@ -30,10 +35,12 @@
 
 # 책 구매
 <img width="351" alt="Image" src="https://github.com/user-attachments/assets/099aedb2-46cb-43df-b786-b538475f1026" />
+
 구매하고자 하는 책의 제목을 입력하여 책을 구매할 수 있다.
 
 # 로그아웃
 <img width="241" alt="Image" src="https://github.com/user-attachments/assets/913a365c-b599-4669-898d-5d9f0f8f0e80" />
+
 프로그램을 종료하면 완전히 종료되는 것이 아닌,
 로그아웃하는 것이며 다른 아이디로 접속할 수 있다.
 
@@ -64,6 +71,7 @@ Book 관리 측면
     - 오류 발생 원인: 너무 많은 곳에서 무턱대고 생성자를 생성하여 A class에서 B class를 호출하고,
                    B class에서 A class를 호출하다보니 '무한 재귀 호출'로 인해 Stack이 쌓여 넘쳤다.
 <img width="755" alt="Image" src="https://github.com/user-attachments/assets/9800a73e-1fa9-4386-80f0-ba2409eb7802" />
+   
     - 해결방법: SellBook과 BuyBook이 BookManager 내부에서 직접 생성되지 않고, 생성자 주입을 통해 관리되도록 하였다.
     - 느낀점: 클래스에서 다른 클래스의 메소드를 사용하고 싶으면 그냥 생성자를 통해 가져오는 것인줄 알았는데,
             이렇게 무턱대고 생성하면 안 된다는 것을 느꼈고 
@@ -77,4 +85,5 @@ Book 관리 측면
       -> csv 파일로 바꾸어 사람이 알아보기 쉬운 파일로 만들자!
     - 오류 사진
       <img width="640" alt="Image" src="https://github.com/user-attachments/assets/058cbc58-ba23-41ce-a72b-54c7ccda8166" />
+   
     - 해결방법: BufferedWriter를 사용하여 csv 파일에 정보를 넣었다.
