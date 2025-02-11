@@ -16,7 +16,7 @@ public class PaymentView {
         this.paymentController = new PaymentController();
     }
 
-    public void PaymentMenu() {
+    public void PaymentMenu(String title) {
         while (isRunning.get()) {
             System.out.println("\n=== 💵 결제 시스템 ===");
             System.out.println("[1] 현금 결제");
@@ -31,7 +31,7 @@ public class PaymentView {
                 System.out.println("🔚 결제를 취소합니다.");
                 isRunning.set(false);
             } else {
-                paymentController.processPayment(choice);
+                paymentController.processPayment(choice, title);
             }
         }
     }

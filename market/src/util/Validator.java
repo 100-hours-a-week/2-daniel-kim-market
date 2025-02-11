@@ -13,4 +13,11 @@ public class Validator{
         }
         return false;
     }
+
+    public boolean isCanPayment(int price, int myprice){
+        if(price <= myprice){
+            return true;
+        }
+        return false;
+    }
 }
