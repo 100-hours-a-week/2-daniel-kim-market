@@ -1,6 +1,66 @@
 # 2-daniel-kim-delivery-order
 1 week homework
 
+# Hun's Store
+  사용자는 다양한 책을 판매하거나 구매할 수 있다.
+
+  판매목록 : 일반 종이책 (새 책, 중고책), Ebook
+
+  결재방식 : 현금, 카드 (체크카드, 신용카드)
+
+# MVC 구조
+
+## model
+- 정보를 저장하는 패키지
+
+Book.java - Book에 대한 정보 저장
+
+User.java - User에 대한 정보 저장
+
+## view
+- 사용에게 보여지는 화면 / Controller로 뿌려준다.
+
+MarketView - 사용자에게 책 구매/판매에 대한 선택지가 보여지는 화면(선택창)
+
+UserView - 사용자가 로그인 할 것인지, 회원가입 할 것인지 결정하는 화면
+
+## controller
+- 기능 흐름 구현 / 세부적인 비즈니스 로직은 service에서 수행
+
+BuyBookController.java - MarketView 중 책 구매를 선택하면 들어가지는 로직. 구매할 책에 대한 간단한 입력을 받고 세부적인 비지니스 로직은 service 패키지(BookService.java)에서 가져온다.
+
+SellBookController.java - MarketView 중 책 판매를 선택하면 들어가지는 로직. 구매할 책에 대한 간단한 입력을 받고 세부적인 비지니스 로직은 service 패키지(BookService.java)에서 가져온다
+
+## service
+- controller에서 요청한 세부적인 비즈니스 로직을 수행
+- Book은 불륨이 커질 것을 대비하여 Manager와 Service를 따로 분리하였습니다.
+
+BookManager.java - 책을 저장하고 정보를 가져오는 로직이 들어가있다.
+
+BookService.java - 책 구매/판매 로직이 들어가있다.
+
+UserService.java - 사용자의 정보를 저장하고, 불러오는 로직이 있다.
+
+## Ex) 코드의 흐름
+1. 사용자는 상점에 들어가기 위해서 아이디를 로그인 한다.
+  
+    1-1. 아이디가 존재하지 않는다면?
+
+        회원가입 (2번)을 누르면 view의 User.java에서 UserController의 특정 메서드를 호출하여 실행한다.
+        그 과정에서 service 내의 여러 validation을 거친 뒤, 회원가입이 성공하면 txt파일에 저장된다.
+      
+    1-2. 아이디가 존재한다면?
+
+        회원정보가 이미 txt파일에 있으므로 controller를 통해 확인한다.
+
+2. 상점에서 책 구매/판매 선택
+
+    1-2. 책 구매
+
+        책을 구매를 선택하면 view는 controller의 특정 메서드에 뿌려준다.
+        BuuBookController에서 로직을 수행하며 중간에 필요한 비즈니스 로직은 BookService(구매/판매 기능)나 BookManager(저장, 불러오기)에서 가져와 실행한다. controller에서 수행이 끝나면 다시 view로 넘어가 원하는 업무를 선택할 수 있다.
+
+
 # 클래스 다이어그램
 <img width="358" alt="Image" src="https://github.com/user-attachments/assets/51e719d5-f765-4bfe-9408-51bf93e99574" />
 

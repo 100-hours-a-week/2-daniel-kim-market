@@ -1,20 +1,19 @@
-package Book;
+package model.book;
 
 import java.io.Serializable;
 
 public class Book implements Serializable {
     private String title;
     private String author;
-    private double price;
+    private int price;
 
-    // 생성자
-    public Book(String title, String author, double price) {
+
+    public Book(String title, String author, int price) {
         this.title = title;
         this.author = author;
         this.price = price;
     }
 
-    // Getter와 Setter
     public String getTitle() {
         return title;
     }
@@ -23,7 +22,7 @@ public class Book implements Serializable {
         return author;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 

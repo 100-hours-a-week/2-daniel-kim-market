@@ -1,19 +1,25 @@
-package Book;
+package service;
 
-import java.io.*;
+import model.book.Book;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
-public class BookBase {
-    protected static final String FILE_NAME = "books.txt"; // 파일 이름
-    protected ArrayList<Book> bookList; // 책 목록
+public class BookManager {
+    private static final String FILE_NAME = "books.txt";
+    public List<Book> bookList;
 
-    public BookBase() {
+    public BookManager() {
         bookList = new ArrayList<>();
-        loadBooks();
     }
 
-    // 책 데이터를 파일에 저장
-    protected void saveBooks() {
+    public void saveBooks() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(bookList);
         } catch (IOException e) {
@@ -21,9 +27,9 @@ public class BookBase {
         }
     }
 
-    // 책 데이터를 파일에서 불러오기
+
     @SuppressWarnings("unchecked")
-    protected void loadBooks() {
+    public void loadBooks() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             bookList = (ArrayList<Book>) ois.readObject();
         } catch (FileNotFoundException e) {
