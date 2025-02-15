@@ -10,9 +10,9 @@ public class PaymentFactory {
             case 1:
                 return new CashPayment(bookname);
             case 2:
-                return new CardPayment(bookService, bookname);
+                return new CardPayment(bookname);
             default:
-                throw new IllegalArgumentException("🚫 잘못된 결제 방식입니다.");
+                throw new IllegalArgumentException("잘못된 결제 방식입니다.");
         }
     }
 }
